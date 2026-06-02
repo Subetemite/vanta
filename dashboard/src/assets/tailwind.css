@@ -1,0 +1,225 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+/* @layer utilities {
+  @variants responsive {
+    .masonry {
+      column-gap: 1.5em;
+      column-count: 1;
+    }
+    .masonry-sm {
+      column-gap: 1.5em;
+      column-count: 2;
+    }
+    .masonry-md {
+      column-gap: 1.5em;
+      column-count: 3;
+    }
+    .break-inside {
+      break-inside: avoid;
+    }
+  }
+} */
+.open-accordion {
+  transform: rotate(137deg);
+}
+.close-accordion {
+  transform: rotate(0deg);
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.2s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+body {
+  overflow: hidden;
+  background-color: "#EEF6FF";
+}
+
+.flex-sidebar {
+  animation: slideInLeft 0.4s ease-out;
+}
+.hide {
+  display: block;
+  animation: slideInLeft 0.4s ease-in;
+}
+
+/*
+  Enter and leave animations can use different
+  durations and timing functions.
+*/
+.slide-fade-enter-active {
+  transition: all 0.3s ease-out;
+}
+
+.slide-fade-leave-active {
+  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateX(20px);
+  opacity: 0;
+}
+
+/* ==============================================
+ * Gradient Red theme
+ * Applied when <html> does NOT have the `dark` class.
+ * ============================================== */
+html:not(.dark) body {
+  background: linear-gradient(135deg, #1a0404 0%, #4a0c0c 50%, #7a1818 100%);
+  background-attachment: fixed;
+}
+html:not(.dark) .bg-case-bg { background-color: transparent; }
+html:not(.dark) .bg-case-surface { background-color: rgba(45, 10, 10, 0.85); }
+html:not(.dark) .bg-case-card { background-color: rgba(26, 6, 6, 0.75); }
+html:not(.dark) .bg-case-elevated { background-color: rgba(68, 18, 18, 0.75); }
+html:not(.dark) .hover\:bg-case-card:hover { background-color: rgba(26, 6, 6, 0.85); }
+html:not(.dark) .hover\:bg-case-elevated:hover { background-color: rgba(68, 18, 18, 0.85); }
+html:not(.dark) .border-case-border { border-color: #5c1a1a; }
+html:not(.dark) .divide-case-border > * { border-color: #5c1a1a; }
+html:not(.dark) .ring-case-border { --tw-ring-color: #5c1a1a; }
+
+html.dark body { background-color: #0d0f12; }
+
+/* ==============================================
+ * Sidebar tab glow (dark-orange outline + halo)
+ * Applied to every nav item in the sidebar.
+ * ============================================== */
+.sidebar-tab {
+  border: 1px solid rgba(217, 119, 6, 0.35);
+  box-shadow: 0 0 6px rgba(217, 119, 6, 0.20);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.sidebar-tab:hover {
+  border-color: rgba(217, 119, 6, 0.65);
+  box-shadow: 0 0 10px rgba(217, 119, 6, 0.35);
+}
+.sidebar-tab.router-link-active,
+.sidebar-tab.exact-active,
+.sidebar-tab.is-active {
+  border-color: rgba(217, 119, 6, 0.9);
+  box-shadow: 0 0 14px rgba(217, 119, 6, 0.45), inset 0 0 8px rgba(217, 119, 6, 0.12);
+}
+
+/* ==============================================
+ * Themed scrollbar (amber on dark)
+ * Applied to all overflowing containers + textareas + native scrollers.
+ * Per-component selectors (e.g. .operations-scrollbar, .module-scroller)
+ * remain more specific and continue to override.
+ * ============================================== */
+.overflow-y-auto,
+.overflow-x-auto,
+.overflow-auto,
+.overflow-y-scroll,
+.overflow-x-scroll,
+.overflow-scroll,
+textarea,
+select[size],
+select[multiple],
+pre,
+code,
+html,
+body {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(217, 119, 6, 0.45) transparent;
+}
+
+.overflow-y-auto::-webkit-scrollbar,
+.overflow-x-auto::-webkit-scrollbar,
+.overflow-auto::-webkit-scrollbar,
+.overflow-y-scroll::-webkit-scrollbar,
+.overflow-x-scroll::-webkit-scrollbar,
+.overflow-scroll::-webkit-scrollbar,
+textarea::-webkit-scrollbar,
+select[size]::-webkit-scrollbar,
+select[multiple]::-webkit-scrollbar,
+pre::-webkit-scrollbar,
+code::-webkit-scrollbar,
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.overflow-y-auto::-webkit-scrollbar-track,
+.overflow-x-auto::-webkit-scrollbar-track,
+.overflow-auto::-webkit-scrollbar-track,
+.overflow-y-scroll::-webkit-scrollbar-track,
+.overflow-x-scroll::-webkit-scrollbar-track,
+.overflow-scroll::-webkit-scrollbar-track,
+textarea::-webkit-scrollbar-track,
+select[size]::-webkit-scrollbar-track,
+select[multiple]::-webkit-scrollbar-track,
+pre::-webkit-scrollbar-track,
+code::-webkit-scrollbar-track,
+html::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.overflow-y-auto::-webkit-scrollbar-thumb,
+.overflow-x-auto::-webkit-scrollbar-thumb,
+.overflow-auto::-webkit-scrollbar-thumb,
+.overflow-y-scroll::-webkit-scrollbar-thumb,
+.overflow-x-scroll::-webkit-scrollbar-thumb,
+.overflow-scroll::-webkit-scrollbar-thumb,
+textarea::-webkit-scrollbar-thumb,
+select[size]::-webkit-scrollbar-thumb,
+select[multiple]::-webkit-scrollbar-thumb,
+pre::-webkit-scrollbar-thumb,
+code::-webkit-scrollbar-thumb,
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb {
+  background: rgba(217, 119, 6, 0.4);
+  border-radius: 9999px;
+  border: 1px solid rgba(28, 31, 40, 0.6);
+}
+
+.overflow-y-auto::-webkit-scrollbar-thumb:hover,
+.overflow-x-auto::-webkit-scrollbar-thumb:hover,
+.overflow-auto::-webkit-scrollbar-thumb:hover,
+.overflow-y-scroll::-webkit-scrollbar-thumb:hover,
+.overflow-x-scroll::-webkit-scrollbar-thumb:hover,
+.overflow-scroll::-webkit-scrollbar-thumb:hover,
+textarea::-webkit-scrollbar-thumb:hover,
+select[size]::-webkit-scrollbar-thumb:hover,
+select[multiple]::-webkit-scrollbar-thumb:hover,
+pre::-webkit-scrollbar-thumb:hover,
+code::-webkit-scrollbar-thumb:hover,
+html::-webkit-scrollbar-thumb:hover,
+body::-webkit-scrollbar-thumb:hover {
+  background: rgba(217, 119, 6, 0.8);
+}
+
+.overflow-y-auto::-webkit-scrollbar-thumb:active,
+.overflow-x-auto::-webkit-scrollbar-thumb:active,
+.overflow-auto::-webkit-scrollbar-thumb:active,
+.overflow-y-scroll::-webkit-scrollbar-thumb:active,
+.overflow-x-scroll::-webkit-scrollbar-thumb:active,
+.overflow-scroll::-webkit-scrollbar-thumb:active,
+textarea::-webkit-scrollbar-thumb:active,
+select[size]::-webkit-scrollbar-thumb:active,
+select[multiple]::-webkit-scrollbar-thumb:active,
+pre::-webkit-scrollbar-thumb:active,
+code::-webkit-scrollbar-thumb:active,
+html::-webkit-scrollbar-thumb:active,
+body::-webkit-scrollbar-thumb:active {
+  background: #d97706;
+}
+
+.overflow-y-auto::-webkit-scrollbar-corner,
+.overflow-x-auto::-webkit-scrollbar-corner,
+.overflow-auto::-webkit-scrollbar-corner,
+.overflow-scroll::-webkit-scrollbar-corner {
+  background: transparent;
+}
