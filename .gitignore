@@ -1,0 +1,25 @@
+#Dependencies
+api/node_modules/
+dashboard/node_modules/
+
+#Build output
+api/dist/
+dashboard/dist
+dashboard/build
+
+#Environment variables
+.env
+.env*
+
+#Logs
+*.log
+
+#VS Code
+.vscode/
+
+# OS files
+Thumbs.db
+.DS_Store
+
+.env
+.env.*
